@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <title>TwitterAPI Script</title>
+</head>
+
+<body>
+    <h1>TwitterAPI Script</h1>
+    <p>This will be the configuration page of the TwitterAPI Script</p>
+
+    <form method="post" action="/start" id=formSettings>
+        <table>
+            <tr>
+                <th>Twitter API</th>
+            </tr>
+            <tr>
+                <td><label>Bearer Token</label></td>
+                <td><input type="text" id="textBearerToken" name="textBearerToken" value="<%= config.twitterAPI.bearer %>"></td>
+            </tr>
+            <tr>
+                <td><label>User Agent / Platform</label></td>
+                <td><input type="text" id="textUserAgent" name="textUserAgent" value="<%= config.twitterAPI.userAgent %>"></td>
+            </tr>
+            <tr>
+                <th><br>Database</th>
+            </tr>
+            <tr>
+                <td><label>Url</label></td>
+                <td><input type="text" id="textDatabaseUrl" name="textDatabaseUrl" value="<%= config.database.url %>"></td>
+            </tr>
+            <tr>
+                <td><label>Name</label></td>
+                <td><input type="text" id="textDatabaseName" name="textDatabaseName" value="<%= config.database.databaseName %>"></td>
+            </tr>
+            <tr>
+                <td><label>Username</label></td>
+                <td><input type="text" id="textDatabaseUsername" name="textDatabaseUsername" value="<%= config.database.auth.username %>"></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+                <td><input type="text" id="textDatabasePassword" name="textDatabasePassword" value="<%= config.database.auth.password %>"></td>
+            </tr>
+            <tr>
+                <th><br>Keywords</th>
+            </tr>
+            <tr>
+                <td><label>Accounts</label></td>
+                <td><input type="text" id="textAccounts" name="textAccounts" value="<%= config.keywords.accounts %>"></td>
+                <td><small>Please enter with comma as seperator e.g. 'account1, account2, account3'</small></td>
+            </tr>
+            <tr>
+                <td><label>Hashtags</label></td>
+                <td><input type="text" id="textHashtags" name="textHashtags" value="<%= config.keywords.hashtags %>"></td>
+                <td><small>Please enter with comma as seperator e.g. 'hashtag1, hashtag1, hashtag1'</small></td>
+            </tr>
+            <tr>
+                <td><label>From</label></td>
+                <td><input type="date" id="dateFrom" name="dateFrom" value="<%= config.keywords.dateFrom %>"></td>
+                <td>
+                    <small</small></td>
+            </tr>
+            <tr>
+                <td><label>To</label></td>
+                <td><input type="date" id="dateTo" name="dateTo" value="<%= config.keywords.dateTo %>"></td>
+                <td><small></small></td>
+            </tr>
+            <tr>
+                <th>Steps Execution</th>
+            </tr>
+            <tr>
+                <td><label>Step 1</label></th>
+                    <% if (config.steps.step1) { %>
+                        <td><input type="checkbox" id="checkboxStep1" name="checkboxStep1" checked>
+                            <%} else { %>
+                                <td><input type="checkbox" id="checkboxStep1" name="checkboxStep1"></th>
+                                    <% } %>
+                                        </th>
+            </tr>
+            <tr>
+                <td><label>Step 2</label></th>
+                    <% if (config.steps.step2) { %>
+                        <td><input type="checkbox" id="checkboxStep2" name="checkboxStep2" checked>
+                            <%} else { %>
+                                <td><input type="checkbox" id="checkboxStep2" name="checkboxStep2"></th>
+                                    <% } %>
+                                        </th>
+            </tr>
+            <tr>
+                <td><label>Step 3</label></th>
+                    <% if (config.steps.step3) { %>
+                        <td><input type="checkbox" id="checkboxStep3" name="checkboxStep3" checked>
+                            <%} else { %>
+                                <td><input type="checkbox" id="checkboxStep3" name="checkboxStep3"></th>
+                                    <% } %>
+                                        </th>
+            <tr>
+                <td><label>Step 4</label></th>
+                    <% if (config.steps.step4) { %>
+                        <td><input type="checkbox" id="checkboxStep4" name="checkboxStep4" checked>
+                            <%} else { %>
+                                <td><input type="checkbox" id="checkboxStep4" name="checkboxStep4"></th>
+                                    <% } %>
+                                        </th>
+            </tr>
+        </table>
+        <p>
+            <input type="submit" value="Start">
+        </p>
+    </form>
+    <div>
+        <p>
+            <% for (var i = 0; i < messages.length ; i++) { %>
+                <p>
+                    <%= messages[i] %>
+                </p>
+                <% } %>
+        </p>
+    </div>
+
+</body>
